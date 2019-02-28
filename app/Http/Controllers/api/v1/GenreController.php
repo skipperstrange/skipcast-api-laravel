@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\Channel;
+use App\Model\Genre;
 use Illuminate\Http\Request;
 
-class ChannelController extends Controller
+class GenreController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class ChannelController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Model\Channel  $channel
+     * @param  \App\Model\Genre  $genre
      * @return \Illuminate\Http\Response
      */
-    public function show(Channel $channel)
+    public function show(Genre $genre)
     {
         //
     }
@@ -52,10 +52,10 @@ class ChannelController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Model\Channel  $channel
+     * @param  \App\Model\Genre  $genre
      * @return \Illuminate\Http\Response
      */
-    public function edit(Channel $channel)
+    public function edit(Genre $genre)
     {
         //
     }
@@ -64,10 +64,10 @@ class ChannelController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Model\Channel  $channel
+     * @param  \App\Model\Genre  $genre
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Channel $channel)
+    public function update(Request $request, Genre $genre)
     {
         //
     }
@@ -75,10 +75,10 @@ class ChannelController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Model\Channel  $channel
+     * @param  \App\Model\Genre  $genre
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Channel $channel)
+    public function destroy(Genre $genre)
     {
         //
     }

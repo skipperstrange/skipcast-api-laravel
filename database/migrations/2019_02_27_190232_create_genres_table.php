@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateReviewsTable extends Migration
+class CreateGenresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateReviewsTable extends Migration
      */
     public function up()
     {
-        Schema::create('reviews', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            //$table->foreign('user_id')->references('id')->on('users');
-            $table->bigInteger('user_id')->unsigned()->index();
-            $table->text('review');
+        Schema::create('genres', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('genre', 40);
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreateReviewsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reviews');
+        Schema::dropIfExists('genres');
     }
 }

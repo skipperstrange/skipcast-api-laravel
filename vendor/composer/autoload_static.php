@@ -469,6 +469,7 @@ class ComposerStaticInit6c622a8272be881a66062c6bdd91ea5c
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Model\\Channel' => __DIR__ . '/../..' . '/app/Model/Channel.php',
+        'App\\Model\\Genre' => __DIR__ . '/../..' . '/app/Model/Genre.php',
         'App\\Model\\Review' => __DIR__ . '/../..' . '/app/Model/Review.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
