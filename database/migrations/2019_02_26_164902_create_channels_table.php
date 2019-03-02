@@ -14,14 +14,14 @@ class CreateChannelsTable extends Migration {
 	{
 		Schema::create('channels', function(Blueprint $table)
 		{
-            $table->bigIncrements('id')->unsigned()->index();
+            $table->bigIncrements('id');
 			$table->string('name', 60);
 			$table->text('description');
 			$table->enum('state', array('start','stop'))->default('stop');
 			$table->enum('active', array('active','inactive','trash'))->default('active');
 			$table->enum('privacy', array('private','public'))->default('public');
-            $table->bigInteger('user_id');
-            //$table->foreign('user_id')->references('id')->on('users');
+            $table->bigInteger('user_id')->unsigned()->index();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
 		});
 	}

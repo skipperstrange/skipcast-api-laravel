@@ -18,4 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::apiResource('/channels', 'api\v1\ChannelController');
+Route::apiResource('/channel', 'api\v1\ChannelController');
