@@ -5,6 +5,7 @@ namespace App\Http\Controllers\api\v1;
 use App\Model\Channel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Channel\ChannelResource;
 
 class ChannelController extends Controller
 {
@@ -15,7 +16,7 @@ class ChannelController extends Controller
      */
     public function index()
     {
-        return Channel::find(5)->reviews;
+        return Channel::all();
     }
 
     /**
@@ -47,7 +48,7 @@ class ChannelController extends Controller
      */
     public function show(Channel $channel)
     {
-        //
+        return new ChannelResource($channel);
     }
 
     /**

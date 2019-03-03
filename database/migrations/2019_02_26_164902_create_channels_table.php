@@ -19,7 +19,8 @@ class CreateChannelsTable extends Migration {
 			$table->text('description');
 			$table->enum('state', array('start','stop'))->default('stop');
 			$table->enum('active', array('active','inactive','trash'))->default('active');
-			$table->enum('privacy', array('private','public'))->default('public');
+            $table->enum('privacy', array('private','public'))->default('public');
+            $table->bigInteger('likes')->default(0);
             $table->bigInteger('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
