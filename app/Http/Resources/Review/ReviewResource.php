@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Resources\Channel;
+namespace App\Http\Resources\Review;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -16,11 +16,8 @@ class ChannelResource extends JsonResource
     {
     return [
             'id' => $this->id,
-            'name' => $this->name,
-            'description' => $this->description,
-            //'privacy' => $this->privacy,
-            //'active' => $this->active,
-            'status' => $this->state,
+            'user' => $this->user_id,
+            'comment' => $this->review,
             'href' => [
                 'channel' => route('review.index', $this->id),
                 'user'=> $this->user_id > 0 ? route('user.show', $this->user_id) : 'Ananymous'

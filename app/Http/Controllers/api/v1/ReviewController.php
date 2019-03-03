@@ -1,9 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\api\v1;
 
 use App\Model\Review;
+use App\Model\Channel;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\Review\ReviewResource;
+use App\Http\Resources\Review\ReviewCollection;
 
 class ReviewController extends Controller
 {
@@ -14,7 +18,7 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        //
+        return ReviewCollection::collection(Review::all());
     }
 
     /**
@@ -46,7 +50,7 @@ class ReviewController extends Controller
      */
     public function show(Review $review)
     {
-        //
+        return new ReviewResource($review);
     }
 
     /**

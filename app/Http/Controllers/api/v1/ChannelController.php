@@ -6,6 +6,7 @@ use App\Model\Channel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Channel\ChannelResource;
+use App\Http\Resources\Channel\ChannelCollection;
 
 class ChannelController extends Controller
 {
@@ -16,7 +17,7 @@ class ChannelController extends Controller
      */
     public function index()
     {
-        return Channel::all();
+        return ChannelCollection::collection(Channel::all());
     }
 
     /**
