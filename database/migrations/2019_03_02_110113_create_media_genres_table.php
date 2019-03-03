@@ -17,7 +17,8 @@ class CreateMediaGenresTable extends Migration {
 			$table->bigInteger('media_id')->unsigned()->index();;
             $table->integer('genre_id')->unsigned()->index();;
             $table->foreign('genre_id')->references('id')->on('genres');
-            $table->foreign('media_id')->references('id')->on('medias');
+            $table->foreign('media_id')->references('id')->on('media');
+            $table->timestamps();
 		});
 	}
 

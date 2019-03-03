@@ -8,6 +8,7 @@ $factory->define(App\Model\Channel::class, function (Faker $faker) {
         'description' => $faker->paragraph,
         'user_id' => $faker->numberBetween(1,5),
         'privacy' => $faker->randomElement(['private', 'public']),
-        'active' => $faker->randomElement(['active', 'inactive', 'trash'])
+        'active' => $faker->randomElement(['active', 'inactive', 'trash']),
+        'state' => $faker->randomElement(['start', 'stop'])
     ];
 });

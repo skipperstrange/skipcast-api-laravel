@@ -25,10 +25,10 @@ class ComposerStaticInit6c622a8272be881a66062c6bdd91ea5c
         '1ca3bc274755662169f9629d5412a1da' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/normalize_uploaded_files.php',
         '40360c0b9b437e69bcbb7f1349ce029e' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/parse_cookie_header.php',
         '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
+        '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
-        '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         '0d8253363903f0ac7b0978dcde4e28a0' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/helpers.php',
     );
 
@@ -157,6 +157,7 @@ class ComposerStaticInit6c622a8272be881a66062c6bdd91ea5c
         'A' => 
         array (
             'App\\' => 4,
+            'Ajthinking\\Tinx\\' => 16,
         ),
     );
 
@@ -400,6 +401,10 @@ class ComposerStaticInit6c622a8272be881a66062c6bdd91ea5c
         array (
             0 => __DIR__ . '/../..' . '/app',
         ),
+        'Ajthinking\\Tinx\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ajthinking/tinx/src',
+        ),
     );
 
     public static $fallbackDirsPsr4 = array (
@@ -449,6 +454,19 @@ class ComposerStaticInit6c622a8272be881a66062c6bdd91ea5c
     );
 
     public static $classMap = array (
+        'Ajthinking\\Tinx\\Console\\NamesTable' => __DIR__ . '/..' . '/ajthinking/tinx/src/Console/NamesTable.php',
+        'Ajthinking\\Tinx\\Console\\State' => __DIR__ . '/..' . '/ajthinking/tinx/src/Console/State.php',
+        'Ajthinking\\Tinx\\Console\\TinxCommand' => __DIR__ . '/..' . '/ajthinking/tinx/src/Console/TinxCommand.php',
+        'Ajthinking\\Tinx\\Includes\\IncludeManager' => __DIR__ . '/..' . '/ajthinking/tinx/src/Includes/IncludeManager.php',
+        'Ajthinking\\Tinx\\Models\\Model' => __DIR__ . '/..' . '/ajthinking/tinx/src/Models/Model.php',
+        'Ajthinking\\Tinx\\Models\\ModelValidator' => __DIR__ . '/..' . '/ajthinking/tinx/src/Models/ModelValidator.php',
+        'Ajthinking\\Tinx\\Models\\Models' => __DIR__ . '/..' . '/ajthinking/tinx/src/Models/Models.php',
+        'Ajthinking\\Tinx\\Naming\\ForbiddenNames' => __DIR__ . '/..' . '/ajthinking/tinx/src/Naming/ForbiddenNames.php',
+        'Ajthinking\\Tinx\\Naming\\PascalStrategy' => __DIR__ . '/..' . '/ajthinking/tinx/src/Naming/PascalStrategy.php',
+        'Ajthinking\\Tinx\\Naming\\ShortestUniqueStrategy' => __DIR__ . '/..' . '/ajthinking/tinx/src/Naming/ShortestUniqueStrategy.php',
+        'Ajthinking\\Tinx\\Naming\\Strategy' => __DIR__ . '/..' . '/ajthinking/tinx/src/Naming/Strategy.php',
+        'Ajthinking\\Tinx\\Naming\\StrategyFactory' => __DIR__ . '/..' . '/ajthinking/tinx/src/Naming/StrategyFactory.php',
+        'Ajthinking\\Tinx\\TinxServiceProvider' => __DIR__ . '/..' . '/ajthinking/tinx/src/TinxServiceProvider.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -456,8 +474,10 @@ class ComposerStaticInit6c622a8272be881a66062c6bdd91ea5c
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
+        'App\\Http\\Controllers\\ChannelMediaController' => __DIR__ . '/../..' . '/app/Http/Controllers/ChannelMediaController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/api/v1/Controller.php',
         'App\\Http\\Controllers\\GenreController' => __DIR__ . '/../..' . '/app/Http/Controllers/api/v1/GenreController.php',
+        'App\\Http\\Controllers\\MediaController' => __DIR__ . '/../..' . '/app/Http/Controllers/api/v1/MediaController.php',
         'App\\Http\\Controllers\\ReviewController' => __DIR__ . '/../..' . '/app/Http/Controllers/api/v1/ReviewController.php',
         'App\\Http\\Controllers\\api\\v1\\ChannelController' => __DIR__ . '/../..' . '/app/Http/Controllers/api/v1/ChannelController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
@@ -472,7 +492,6 @@ class ComposerStaticInit6c622a8272be881a66062c6bdd91ea5c
         'App\\Model\\Genre' => __DIR__ . '/../..' . '/app/Model/Genre.php',
         'App\\Model\\Media' => __DIR__ . '/../..' . '/app/Model/Media.php',
         'App\\Model\\Review' => __DIR__ . '/../..' . '/app/Model/Review.php',
-        'App\\Model\\User' => __DIR__ . '/../..' . '/app/Model/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',

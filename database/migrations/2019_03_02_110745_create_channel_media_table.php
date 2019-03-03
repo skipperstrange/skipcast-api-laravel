@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateChannelMediasTable extends Migration {
+class CreateChannelMediaTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,11 +12,11 @@ class CreateChannelMediasTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('channel_medias', function(Blueprint $table)
+		Schema::create('channel_media', function(Blueprint $table)
 		{
 			$table->bigInteger('channel_id')->unsigned()->index();;
             $table->bigInteger('media_id')->unsigned()->index();;
-            $table->foreign('media_id')->references('id')->on('medias');
+            $table->foreign('media_id')->references('id')->on('media');
             $table->foreign('channel_id')->references('id')->on('channels');
             $table->enum('active', array('active','inactive'))->default('active');
             $table->timestamps();
@@ -31,7 +31,7 @@ class CreateChannelMediasTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('channel_medias');
+		Schema::drop('channel_media');
 	}
 
 }

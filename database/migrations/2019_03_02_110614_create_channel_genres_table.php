@@ -18,6 +18,7 @@ class CreateChannelGenresTable extends Migration {
             $table->integer('genre_id')->unsigned()->index();;
             $table->foreign('genre_id')->references('id')->on('genres');
             $table->foreign('channel_id')->references('id')->on('channels');
+            $table->timestamps();
 		});
 	}
 
