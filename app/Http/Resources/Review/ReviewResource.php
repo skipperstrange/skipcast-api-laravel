@@ -16,10 +16,10 @@ class ChannelResource extends JsonResource
     {
     return [
             'id' => $this->id,
-            'user' => $this->user_id,
+            //'user' => $this->user_id,
             'comment' => $this->review,
             'href' => [
-                'channel' => route('review.index', $this->id),
+                'channel' => route('channwl.show', $this->channel_id),
                 'user'=> $this->user_id > 0 ? route('user.show', $this->user_id) : 'Ananymous'
             ]
         ];

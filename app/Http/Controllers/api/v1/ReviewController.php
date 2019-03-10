@@ -16,9 +16,9 @@ class ReviewController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(channel $channel)
     {
-        return ReviewCollection::collection(Review::all());
+        return ReviewCollection::collection($channel->reviews);
     }
 
     /**

@@ -17,7 +17,7 @@ class ChannelController extends Controller
      */
     public function index()
     {
-        return ChannelCollection::collection(Channel::all());
+        return ChannelCollection::collection(Channel::Paginate(20));
     }
 
     /**

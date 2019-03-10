@@ -5,6 +5,7 @@ namespace App\Model;
 use App\Model\Review;
 use App\Model\Media;
 use App\Model\Genre;
+use App\Model\User;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -16,6 +17,11 @@ class Channel extends Model
 
     function reviews(){
          return $this->hasMany(Review::class);
+    }
+
+    function review(){
+
+        return $this->hasMany(Review::class);
     }
 
     function media(){
