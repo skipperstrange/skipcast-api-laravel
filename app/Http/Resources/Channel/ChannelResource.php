@@ -18,7 +18,7 @@ class ChannelResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'description' => $this->description,
-            //'privacy' => $this->privacy,
+            'privacy' => $this->privacy,
             //'active' => $this->active,
             'status' => $this->state,
             'href' => [
