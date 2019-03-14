@@ -18,6 +18,18 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="js/jPlayer/jplayer.flat.css')}}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css')}}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('css/animate.css')}}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css')}}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('css/simple-line-icons.css')}}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('css/font.css')}}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('css/app.css')}}" type="text/css" />
+    <!--[if lt IE 9]>
+    <script src="js/ie/html5shiv.js"></script>
+    <script src="js/ie/respond.min.js"></script>
+    <script src="js/ie/excanvas.js"></script>
+  <![endif]-->
 </head>
 <body>
     <div id="app">

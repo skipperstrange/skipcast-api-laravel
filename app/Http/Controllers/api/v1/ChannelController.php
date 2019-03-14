@@ -45,7 +45,10 @@ class ChannelController extends Controller
     public function store(ChannelRequest $request)
     {
         $channel = new Channel;
-        $channel->name = $request->name;
+        $channel->name =$request->name;
+        $channel->description =$request->description;
+        $channel->privacy = $request->privacy;
+        $channel->state = $request->state;
         return $channel;
     }
 
