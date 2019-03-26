@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace SkipCast\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

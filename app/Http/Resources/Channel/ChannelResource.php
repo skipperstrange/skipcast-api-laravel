@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Resources\Channel;
+namespace SkipCast\Http\Resources\Channel;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 

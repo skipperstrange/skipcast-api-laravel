@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\api\v1;
+namespace SkipCast\Http\Controllers\api\v1;
 
-use App\Model\Channel;
+use SkipCast\Model\Channel;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\ChannelRequest;
-use App\Http\Resources\Channel\ChannelResource;
-use App\Http\Resources\Channel\ChannelCollection;
+use SkipCast\Http\Controllers\Controller;
+use SkipCast\Http\Requests\ChannelRequest;
+use SkipCast\Http\Resources\Channel\ChannelResource;
+use SkipCast\Http\Resources\Channel\ChannelCollection;
 
 class ChannelController extends Controller
 {
@@ -55,7 +55,7 @@ class ChannelController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Model\Channel  $channel
+     * @param  \SkipCast\Model\Channel  $channel
      * @return \Illuminate\Http\Response
      */
     public function show(Channel $channel)
@@ -66,7 +66,7 @@ class ChannelController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Model\Channel  $channel
+     * @param  \SkipCast\Model\Channel  $channel
      * @return \Illuminate\Http\Response
      */
     public function edit(Channel $channel)
@@ -78,7 +78,7 @@ class ChannelController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Model\Channel  $channel
+     * @param  \SkipCast\Model\Channel  $channel
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Channel $channel)
@@ -89,7 +89,7 @@ class ChannelController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Model\Channel  $channel
+     * @param  \SkipCast\Model\Channel  $channel
      * @return \Illuminate\Http\Response
      */
     public function destroy(Channel $channel)

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Model;
-use App\Model\Channel;
-use App\Model\Genre;
-use App\User;
+namespace SkipCast\Model;
+use SkipCast\Model\Channel;
+use SkipCast\Model\Genre;
+use SkipCast\User;
 
 use Illuminate\Database\Eloquent\Model;
 

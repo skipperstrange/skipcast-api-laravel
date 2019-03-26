@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Resources\Review;
+namespace SkipCast\Http\Resources\Review;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 

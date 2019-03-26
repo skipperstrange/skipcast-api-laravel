@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\api\v1;
+namespace SkipCast\Http\Controllers\api\v1;
 
-use App\Model\Review;
-use App\Model\Channel;
+use SkipCast\Model\Review;
+use SkipCast\Model\Channel;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Http\Resources\Review\ReviewResource;
-use App\Http\Resources\Review\ReviewCollection;
+use SkipCast\Http\Controllers\Controller;
+use SkipCast\Http\Resources\Review\ReviewResource;
+use SkipCast\Http\Resources\Review\ReviewCollection;
 
 class ReviewController extends Controller
 {
@@ -45,7 +45,7 @@ class ReviewController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Model\Review  $review
+     * @param  \SkipCast\Model\Review  $review
      * @return \Illuminate\Http\Response
      */
     public function show(Review $review)
@@ -56,7 +56,7 @@ class ReviewController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Model\Review  $review
+     * @param  \SkipCast\Model\Review  $review
      * @return \Illuminate\Http\Response
      */
     public function edit(Review $review)
@@ -68,7 +68,7 @@ class ReviewController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Model\Review  $review
+     * @param  \SkipCast\Model\Review  $review
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Review $review)
@@ -79,7 +79,7 @@ class ReviewController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Model\Review  $review
+     * @param  \SkipCast\Model\Review  $review
      * @return \Illuminate\Http\Response
      */
     public function destroy(Review $review)

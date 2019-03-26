@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Model;
+namespace SkipCast\Model;
 
-use App\Model\Review;
-use App\Model\Media;
-use App\Model\Genre;
-use App\Model\User;
+use SkipCast\Model\Review;
+use SkipCast\Model\Media;
+use SkipCast\Model\Genre;
+use SkipCast\Model\User;
 
 use Illuminate\Database\Eloquent\Model;
 
