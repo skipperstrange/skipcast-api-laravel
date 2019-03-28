@@ -5,7 +5,7 @@
         </a>
         <a href="{{ url('/') }}" class="navbar-brand text-lt">
           <i class="icon-earphones"></i>
-          <img src="images/logo.png" alt="." class="hide">
+          <img src="{{asset('images/logo.png')}}" alt="." class="hide">
           <span class="hidden-nav-xs m-l-sm">{{ config('app.name') }}</span>
         </a>
         <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".user">
@@ -44,7 +44,7 @@
                 <div class="list-group list-group-alt">
                   <a href="#" class="media list-group-item">
                     <span class="pull-left thumb-sm">
-                      <img src="images/a0.png" alt="..." class="img-circle">
+                      <img src="{{asset('images/a0.png')}}" alt="..." class="img-circle">
                     </span>
                     <span class="media-body block m-b-none">
                       Use awesome animate.css<br>
@@ -78,7 +78,7 @@
             <li class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
-                        <img src="images/a0.png" alt="...">
+                        <img src="{{asset('images/a0.png')}}" alt="...">
                     </span>
                     {{Auth::user()->name}} <span class="caret"></span>
                 </a>

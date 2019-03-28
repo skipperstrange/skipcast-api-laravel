@@ -2,8 +2,7 @@
 
 @section('content')
 
-                    <section class="scrollable padder-lg">
-                      <h2 class="font-thin m-b">Trending Channels <i class="icon-disc icon text-success"></i></h2>
+                      <h3 class="font-thin m-b">Trending Channels <i class="icon-disc icon text-success"></i></h3>
                       <div class="row row-sm">
                         <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
                           <div class="item">
@@ -303,6 +302,5 @@
                         <li><a href="#">5</a></li>
                         <li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
                       </ul>
-                    </section>
 
 @endsection()

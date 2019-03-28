@@ -16,7 +16,7 @@ class CreateChannelsTable extends Migration {
 		{
             $table->bigIncrements('id');
 			$table->string('name', 60);
-			$table->text('description');
+			$table->text('description')->nullable();
 			$table->enum('state', array('start','stop'))->default('stop');
 			$table->enum('active', array('active','inactive','trash'))->default('active');
             $table->enum('privacy', array('private','public'))->default('public');

@@ -13,20 +13,20 @@
                       Quick Menu
                     </li>
                     <li>
-                      <a href="{{route('home')}}">
+                      <a href="{{route('home')}}" title="Go to your home page.">
                         <i class="icon-home icon text-info"></i>
                         <span class="font-bold">Home</span>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="{{route('newchannel')}}"  title="Add a new channel.">
                         <i class="icon-playlist icon text-warning-lter"></i>
                         <b class="badge  dker pull-right">+</b>
                         <span>New</span>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="#"  title="Upload a new file">
                         <i class="icon-music-tone-alt icon text-warning-lter"></i>
                         <b class="badge  dker pull-right">+</b>
                         <span>Upload</span>
@@ -37,14 +37,14 @@
                       Discover
                     </li>
                     <li>
-                      <a href="{{route('channels')}}">
+                      <a href="{{route('channels')}}" title="View recent channels.">
                         <i class="icon-playlist icon text-success-lter"></i>
                         <span class="font-bold">Channels</span>
                       </a>
                     </li>
 
                     <li>
-                      <a href="genres.html">
+                      <a href="#" >
                         <i class="icon-disc icon text-info"></i>
                         <span class="font-bold">Genres</span>
                       </a>
@@ -331,12 +331,17 @@
               </div>
             </section>
 
+            @guest
+            @if (Route::has('register'))
+
+            @endif
+            @else
             <footer class="footer hidden-xs no-padder text-center-nav-xs">
               <div class="bg hidden-xs ">
                   <div class="dropdown dropup wrapper-sm clearfix">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                       <span class="thumb-sm avatar pull-left m-l-xs">
-                        <img src="images/a3.png" class="dker" alt="...">
+                        <img src="{{asset('images/a3.png')}}" class="dker" alt="...">
                         <i class="on b-black"></i>
                       </span>
                       <span class="hidden-nav-xs clear">
@@ -383,6 +388,8 @@
                     </ul>
                   </div>
                 </div>            </footer>
-          </section>
+
+        @endguest
+             </section>
         </aside>
     <!-- /.aside -->

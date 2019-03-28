@@ -4,9 +4,8 @@
   <meta charset="utf-8" />
   <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name') }}</title>
-  <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+  <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <link rel="stylesheet" href="css/jplayer.flat.css" type="text/css" />
   <link rel="stylesheet" href="{{ asset('css/jplayer.flat.css')}}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css')}}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('css/animate.css')}}" type="text/css" />
@@ -14,8 +13,8 @@
     <link rel="stylesheet" href="{{ asset('css/simple-line-icons.css')}}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('css/font.css')}}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('css/app.css')}}" type="text/css" />
-    <script src="js/ie/respond.min.js"></script>
-    <script src="js/ie/excanvas.js"></script>
+    <script src="{{ asset('js/ie/respond.min.js')}}"></script>
+    <script src="{{ asset('js/ie/excanvas.js')}}"></script>
   <![endif]-->
 </head>
 <body class="">
@@ -30,7 +29,9 @@
           <section class="vbox">
           <section class="w-f-md">
               <section class="hbox stretch bg-black dker">
+                  <section class="scrollable padder-lg">
                     @yield('content')
+                  </section>
               </section>
           </section>
           @include('includes.footer-player')
@@ -45,8 +46,11 @@
   <script src="{{ asset('js/bootstrap.js')}}"></script>
   <!-- App -->
   <script src="{{ asset('js/app.js')}}"></script>
+  <script src="{{ asset('js/parsley/parsley.min.js')}}"></script>
+  <script src="{{ asset('js/parsley/parsley.extend.js')}}"></script>
+  <script src="{{ asset('js/app.plugin.js')}}"></script>
   <script src="{{ asset('js/slimscroll/jquery.slimscroll.min.js')}}"></script>
-    <script src="{{ asset('js/app.plugin.js')}}"></script>
+  <script src="{{ asset('js/app.plugin.js')}}"></script>
   <script src="{{ asset('js/jPlayer/jquery.jplayer.min.js')}}"></script>
   <script src="{{ asset('js/jPlayer/add-on/jplayer.playlist.min.js')}}"></script>
   <script src="{{ asset('js/jPlayer/demo.js')}}"></script>

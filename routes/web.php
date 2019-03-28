@@ -15,15 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('/channels', 'ChannelController@index')->name('channels');
-
+Route::get('/channels/add', 'ChannelController@add')->name('newchannel');
 Route::get('logout', 'Auth\LoginController@logout');

@@ -6,18 +6,9 @@
       <a class="navbar-brand block" href="index.html"><span class="h1 font-bold">{{ config('app.name') }}</a>
       <section class="m-b-lg">
         <header class="wrapper text-center">
-
-          @if ($errors->has('email'))
-                <span class="invalid-feedback text-danger" role="alert">
-                    <strong>{{ $errors->first('email') }}</strong>
-                </span>
-          @endif
-
-          @if ($errors->has('password'))
-                <span class="invalid-feedback text-danger" role="alert">
-                   {{ $errors->first('password') }}
-                </span>
-          @endif
+            @if(count($errors) > 0)
+            @include('includes/login-error-msgs')
+            @endif
         </header>
          <form method="POST" action="{{ route('login') }}">
                         @csrf

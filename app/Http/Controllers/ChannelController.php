@@ -27,4 +27,8 @@ class ChannelController extends Controller
        // return
     }
 
+    public function add(){
+        return view('newchannel');
+    }
+
 }
