@@ -5,7 +5,7 @@ namespace SkipCast\Model;
 use SkipCast\Model\Review;
 use SkipCast\Model\Media;
 use SkipCast\Model\Genre;
-use SkipCast\Model\User;
+use SkipCast\User;
 
 use Illuminate\Database\Eloquent\Model;
 

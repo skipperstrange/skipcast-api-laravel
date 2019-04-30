@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+@include('includes/msgs');
               <!-- side content -->
               <aside class="col-sm-5 no-padder" id="sidebar">
                 <section class="vbox animated fadeInUp">

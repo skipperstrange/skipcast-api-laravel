@@ -11,13 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('index');
 
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@home')->name('home');
+
+//channels
 Route::get('/channels', 'ChannelController@index')->name('channels');
-Route::get('/channels/add', 'ChannelController@add')->name('newchannel');
+Route::get('/channels/edit', 'ChannelController@edit')->name( 'editchannel');
+Route::get('/channels/delete/{channel_id}', 'ChannelController@delete')->name( 'deletechannel')->middleware('auth');
+//Route::get( '/channels/edit/{channel}', 'ChannelController@edit')->name( 'editchannel');
+Route::get( '/channels/editmodal/{channel}', 'ModalController@editchannel')->name( 'editchannelmodal');
+Route::post('/channels/save', 'ChannelController@save')->name('savechannel');
+
+//media
+Route::get('/media/edit', 'MediaController@edit')->name('editmedia');
+
 Route::get('logout', 'Auth\LoginController@logout');

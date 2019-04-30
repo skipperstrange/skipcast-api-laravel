@@ -20,6 +20,7 @@ class CreateMediaTable extends Migration {
 			$table->enum('type', array('audio','video'))->nullable();
 			$table->enum('public', array('public','private'))->default('public');
             $table->enum('downloadable', array('yes','no'))->default('no');
+            $table->bigInteger('views')->default(0);
             $table->bigInteger('likes')->default(0);
             $table->bigInteger('user_id')->unsigned()->index();
             $table->timestamps();

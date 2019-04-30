@@ -2,58 +2,60 @@
      jPlayer: "#jplayer_N",
      cssSelectorAncestor: "#jp_container_N"
  }, [{
-
+         mp3: "http://localhost:8080/resources/media/Kwesi-Arthur-Dont-Keep-Me-Waiting-ft.-Kidi.mp3",
+     },
+     {
          title: "Dont Keep Me waiting",
          artist: "Kwasi Arthur ft KiDi",
-         mp3: "http://localhost:8080/resources/audio/Kwesi-Arthur-Dont-Keep-Me-Waiting-ft.-Kidi.mp3",
+         mp3: "http://localhost:8080/resources/media/Kwesi-Arthur-Dont-Keep-Me-Waiting-ft.-Kidi.mp3",
          poster: "images/m0.jpg"
      },
      {
          title: "White Iverson",
          artist: "Post Malone",
-         mp3: "http://localhost:8080/resources/audio/track4.mp3",
+         mp3: "http://localhost:8080/resources/media/track4.mp3",
          poster: "images/m0.jpg"
      },
      {
          title: "One Kiss",
          artist: "Dua Lipa ft Calvin Harris",
-         mp3: "http://localhost:8080/resources/audio/Dua Lipa, Calvin Harris - One Kiss (DawnFoxes.com).mp3",
+         mp3: "http://localhost:8080/resources/media/Dua Lipa, Calvin Harris - One Kiss (DawnFoxes.com).mp3",
          poster: "images/m0.jpg"
      },
      {
          title: "Lean On",
          artist: "3studios",
-         mp3: "http://localhost:8080/resources/audio/track1.mp3",
+         mp3: "http://localhost:8080/resources/media/track1.mp3",
          poster: "images/m0.jpg"
      },
      {
          title: "One Dance",
          artist: "Wizkid Drake",
-         mp3: "http://localhost:8080/resources/audio/track2.mp3",
+         mp3: "http://localhost:8080/resources/media/track2.mp3",
          poster: "images/m0.jpg"
      },
      {
          title: "What You Came For",
          artist: "Calvin Haris ft Rihanna",
-         mp3: "http://localhost:8080/resources/audio/Calvin_Harris_feat._Rihanna_-_This_Is_What_You_Came_For_(mp3.pm).mp3",
+         mp3: "http://localhost:8080/resources/media/Calvin_Harris_feat._Rihanna_-_This_Is_What_You_Came_For_(mp3.pm).mp3",
          poster: "images/m0.jpg"
      },
      {
          title: "Cryptic Psyche",
          artist: "ADG3",
-         mp3: "http://localhost:8080/resources/audio/trak.mp3",
+         mp3: "http://localhost:8080/resources/media/trak.mp3",
          poster: "images/m0.jpg"
      },
      {
          title: "Electro Freak",
          artist: "Studios",
-         mp3: "http://localhost:8080/resources/audio/track6.mp3",
+         mp3: "http://localhost:8080/resources/media/track6.mp3",
          poster: "images/m0.jpg"
      },
      {
          title: "Freeform",
          artist: "ADG",
-         mp3: "http://localhost:8080/resources/audio/track5.mp3",
+         mp3: "http://localhost:8080/resources/media/track5.mp3",
          poster: "images/m0.jpg"
      }
  ], {

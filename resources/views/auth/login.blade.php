@@ -1,14 +1,12 @@
 @extends('layouts.auth')
 
 @section('content')
-<section id="content" class="m-t-lg wrapper-md animated fadeInUp">
-    <div class="container aside-xl">
+<section id="content" class="m-t-lg wrapper-md animated fadeInUp" style="margin-top:0px;">
+    <div class="container aside-xl scrollable">
       <a class="navbar-brand block" href="index.html"><span class="h1 font-bold">{{ config('app.name') }}</a>
-      <section class="m-b-lg">
+      <section class="m-b-lg scrollable">
         <header class="wrapper text-center">
-            @if(count($errors) > 0)
-            @include('includes/login-error-msgs')
-            @endif
+            @include('includes/msgs')
         </header>
          <form method="POST" action="{{ route('login') }}">
                         @csrf

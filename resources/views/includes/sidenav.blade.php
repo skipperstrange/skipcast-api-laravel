@@ -13,20 +13,20 @@
                       Quick Menu
                     </li>
                     <li>
-                      <a href="{{route('home')}}" title="Go to your home page.">
+                      <a href="{{route('home')}}" data-toggle="tooltip" data-placement="right" title="Go to your home page.">
                         <i class="icon-home icon text-info"></i>
                         <span class="font-bold">Home</span>
                       </a>
                     </li>
                     <li>
-                      <a href="{{route('newchannel')}}"  title="Add a new channel.">
+                      <a href="{{route('editchannel')}}" data-toggle="tooltip" data-placement="right"  title="Add a new channel.">
                         <i class="icon-playlist icon text-warning-lter"></i>
                         <b class="badge  dker pull-right">+</b>
                         <span>New</span>
                       </a>
                     </li>
                     <li>
-                      <a href="#"  title="Upload a new file">
+                      <a href="{{route('editmedia')}}" data-toggle="tooltip" data-placement="right"  title="Upload a new media file">
                         <i class="icon-music-tone-alt icon text-warning-lter"></i>
                         <b class="badge  dker pull-right">+</b>
                         <span>Upload</span>
@@ -37,14 +37,14 @@
                       Discover
                     </li>
                     <li>
-                      <a href="{{route('channels')}}" title="View recent channels.">
+                      <a href="{{route('channels')}}" data-toggle="tooltip" data-placement="right" title="View recent channels.">
                         <i class="icon-playlist icon text-success-lter"></i>
                         <span class="font-bold">Channels</span>
                       </a>
                     </li>
 
                     <li>
-                      <a href="#" >
+                      <a href="#"  data-toggle="tooltip" data-placement="right" title="View Genres." >
                         <i class="icon-disc icon text-info"></i>
                         <span class="font-bold">Genres</span>
                       </a>
@@ -336,7 +336,7 @@
 
             @endif
             @else
-            <footer class="footer hidden-xs no-padder text-center-nav-xs">
+            <footer class="footer hidden-xs no-padder text-center-nav-xs  navbar-fixed-bottom">
               <div class="bg hidden-xs ">
                   <div class="dropdown dropup wrapper-sm clearfix">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">

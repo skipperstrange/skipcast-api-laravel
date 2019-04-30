@@ -2,6 +2,7 @@
 
 @section('content')
 
+
 <section class="scrollable padder">
     <div class="m-b-md">
                 <h3 class="m-b-none">Add Channel <i class="icon-playlist icon text-warning"></i></h3>
@@ -11,26 +12,10 @@
                   <section class="panel panel-default">
                     <header class="panel-heading font-bold">Basic info</header>
                     <div class="panel-body">
-                      <form role="form"  parsley-validate>
-                        <div class="form-group">
-                          <label>Channel name</label>
-                          <input type="text"  data-required="true" title="Please provide a title for your stream." class="form-control rounded" placeholder="Channel name">
-                        </div>
-                        <div class="form-group">
-                          <label>Description</label>
-                          <input type="text" title="Description." class="form-control rounded" placeholder="Channel description">
-                        </div>
-
-                        <div class="form-group">
-                          <div class="col-lg-offset-0 col-lg-10">
-                            <div class="checkbox i-checks">
-                              <label>
-                                <input type="checkbox" name="private" value="private" checked=""><i></i> Private
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-
+                      <form role="form" action="{{route('savechannel')}}" method="post">
+                        @csrf
+                            @include('includes/msgs')
+                            @include('includes/channel-form')
 
                         <button type="submit" class="btn btn-block btn-default rounded">Submit</button>
                       </form>

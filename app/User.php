@@ -6,6 +6,11 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use SkipCast\Model\Channel;
+use SkipCast\Model\Media;
+use SkipCast\Model\Review;
+
+use Illuminate\Database\Eloquent\Model;
 
 
 
@@ -39,4 +44,21 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    function channel(){
+
+
+          return $this->hasMany(Channel::class);
+    }
+
+    function media(){
+
+
+          return $this->hasMany(Media::class);
+    }
+
+    function review(){
+
+         return $this->hasMany(Review::class);
+    }
 }
