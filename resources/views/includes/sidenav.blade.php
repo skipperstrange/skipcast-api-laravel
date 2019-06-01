@@ -19,14 +19,14 @@
                       </a>
                     </li>
                     <li>
-                      <a href="{{route('editchannel')}}" data-toggle="tooltip" data-placement="right"  title="Add a new channel.">
+                      <a href="{{route('channel.edit')}}" data-toggle="tooltip" data-placement="right"  title="Add a new channel.">
                         <i class="icon-playlist icon text-warning-lter"></i>
                         <b class="badge  dker pull-right">+</b>
                         <span>New</span>
                       </a>
                     </li>
                     <li>
-                      <a href="{{route('editmedia')}}" data-toggle="tooltip" data-placement="right"  title="Upload a new media file">
+                      <a href="{{route('media.add')}}" data-toggle="tooltip" data-placement="right"  title="Upload a new media file">
                         <i class="icon-music-tone-alt icon text-warning-lter"></i>
                         <b class="badge  dker pull-right">+</b>
                         <span>Upload</span>

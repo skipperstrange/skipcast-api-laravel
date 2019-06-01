@@ -25,20 +25,23 @@
         $('#modalAction').on('click',function(){
             var message = '';
             var channel = $('form#editchannel').serialize();
-            axios.post('{{route("savechannel")}}', channel)
+            axios.post('{{route("channel.save")}}', channel)
             .then(res=> {
                 stats = res.data;
                 if(stats.class === 'alert-danger'){
                    $.each(stats.message, function(msg, val){
+                       notice.removeClass('alert-success');
                        message += '<b>'+val+"</b><br />";
                    });
                    console.log(message);
                 }else{
-                    message = stats.message
+                    notice.removeClass('alert-danger');
+                    message = stats.message;
                 }
                 notice.addClass(stats.class);
                     msgbox.html(message)
                 notice.slideDown('fast');
+                notice.show(0);
 
             })
             .catch(function (error) {

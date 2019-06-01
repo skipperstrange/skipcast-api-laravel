@@ -3,80 +3,89 @@
 namespace SkipCast\Http\Controllers;
 
 use Illuminate\Http\Request;
-use SkipCast\Http\Controllers;
-use SkipCast\Http\Requests\ChannelRequest;
-use SkipCast\Http\Resources\Media\ChannelResource;
-use SkipCast\Http\Resources\Media\ChannelCollection;
 use SkipCast\Model\Media;
 use Illuminate\Support\Facades\Auth;
-class ChannelController extends Controller
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
+class MediaController extends Controller
 {
+    //
 
-    protected $rules = [
-        'name' => "required|max:30"
-    ];
-
-    function __construct()
-    {
-        $this->middleware('auth:web')->except('index', 'show');
-    }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         //$medias =  ChannelCollection::collection(Media::Paginate(20));
-        return view('medias');
-       // return
+
+        return view('media');
+        // return
     }
 
-    public function edit(){
+    public function add()
+    {
+
+        //$getID3 = new \getID3;
         $media = new Media;
-        return view('editmedia', ['media'=>$media]);
+        return view('addmedia', ['media'=>$media]);
     }
 
-    public function save(Request $request){
+    public function save(Request $request)
+    {
 
-        $validate = \Validator::make($request->all(), $this->rules);
+        // $validate = \Validator::make($request->all(), $this->rules);
 
-        if ($validate->fails()) {
-            $notice['message'] = $validate->messages();
-            $notice['class'] = "alert-danger";
-            $notice['status'] = "fail";
-            return response()->json($notice, 200);
-        }
+        $notice['message'] = "Media successfully created.";
+        $notice['class'] = "alert-success";
 
-        if(isset($request['media_id'])){
-            $media = Media::find($request['media_id']);
-            $media->name = $request['name'];
-            $media->description = $request['description'];
-            $media->privacy = $request['privacy'];
-            $media->update();
-            $notice[ 'message'] = "Media successfully updated.";
-            $notice['class'] = "alert-success";
-        }else{
+
+
+        //return response()->json($request, 200);;
+
+
+        $m = $request->file('files');
+        //dd($m);
+
+        //$media->mime_type = $m->getMimeType();
+
+        //        Log::stack(['single', 'daily'])->info($media);
+
+
+        $media_info = Media::_get_basic_info($m);
+
+        if($m){
             $media = new Media();
-            $media->name = $request['name'];
-            $media->description = $request['description'];
-            $media->privacy = $request['privacy'];
-            $notice['msg'] = "Please check the errors.";
-            $notice['class'] = 'alert-danger';
+            $media->title = $m->getClientOriginalName();
+            $media->type = $m->getMimeType();
+            $media->size = $m->getClientSize();
+
             if ($request->user()->media()->save($media)) {
-                $notice[ 'message'] = "Media successfully created.";
-                $notice['class'] = "alert-success";
+               $filename =  Media::_filename($media->id, $m->getClientOriginalExtension());
+                $media->name = $media->title;
+                Media::_store_media($filename, File::get($m));
+                $cover_art = Media::_filename($media->id, Media::_extension($media_info['media_art_mime']));
+                //Storage::disk('art')->put( $img, $media_info['media_art']);
+                Media::_store_media_art($cover_art, $media_info['media_art']);
+                $media->thumbnailUrl = $media_info['media_art'];
+
+                $files[] = $media;
+                //print_r('<img src="'.$media_info['media_art'].'">');
+                return response()->json(['files' => $files], 200);
             }
         }
+
+
         if ($request->ajax()) {
-          // return $request['media_id'];
-           return response()->json($notice, 200);
-        }else{
-            return rediect('newmedia')->with($notice);
+            $notice['message'] = "Media successfully created.";
+            $notice['class'] = "alert-success";
+            // return $request['media_id'];
+            //return response()->json($notice, 200);
+        } else {
+            $notice['message'] = "Media successfully created.";
+            $notice['class'] = "alert-success";
+            //return rediect('newmedia')->with($notice);
         }
     }
 
-    public function delete($media_id){
+    public function delete($media_id)
+    {
 
         $media = Media::where('id', $media_id)->first();
 
@@ -85,11 +94,11 @@ class ChannelController extends Controller
         }
 
         $notice['msg'] = "Action could not be completed.";
-            $notice['class'] = "alert-danger";
-            $notice['notice_type'] = 'modal';
-             return redirect()->back()->with($notice);
+        $notice['class'] = "alert-danger";
+        $notice['notice_type'] = 'modal';
+        return redirect()->back()->with($notice);
 
-        if($media){
+        if ($media) {
             $media->delete();
             $notice['msg'] = "Your media '$media->name' successfully removed.";
             $notice['class'] = "alert-success";
@@ -100,7 +109,7 @@ class ChannelController extends Controller
         $notice['class'] = "alert-danger";
         $notice['notice_type'] = 'modal';
 
-        return redirect('newmedia')->route('index')->with($notice);
+        //return redirect( 'editmedia')->route('index')->with($notice);
     }
 
 }

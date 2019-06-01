@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{ asset('css/simple-line-icons.css')}}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('css/font.css')}}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('css/app.css')}}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('css/custom.css')}}" type="text/css" />
 
   <!--[if lt IE 9]>
     <script src="{{ asset('js/ie/html5shiv.js')}}"></script>
@@ -44,7 +45,6 @@
       </section>
     </section>
   </section>
-
   <script src="{{ asset('js/jquery.min.js')}}"></script>
   <!-- Bootstrap -->
   <script src="{{ asset('js/bootstrap.js')}}"></script>
@@ -58,5 +58,7 @@
   <script src="{{ asset('js/jPlayer/jquery.jplayer.min.js')}}"></script>
   <script src="{{ asset('js/jPlayer/add-on/jplayer.playlist.min.js')}}"></script>
   <script src="{{ asset('js/jPlayer/demo.js')}}"></script>
+ @stack('scripts')
+
 </body>
 </html>

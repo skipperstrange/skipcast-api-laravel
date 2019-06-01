@@ -33,10 +33,11 @@ class ChannelController extends Controller
     }
 
     public function edit(){
-
         $channel = new Channel;
         return view('editchannel', ['channel'=>$channel]);
     }
+
+
 
     public function save(Request $request){
 
@@ -101,7 +102,7 @@ class ChannelController extends Controller
         $notice['class'] = "alert-danger";
         $notice['notice_type'] = 'modal';
 
-        return redirect('newchannel')->route('index')->with($notice);
+        return redirect('channel.edit')->route('index')->with($notice);
     }
 
 }

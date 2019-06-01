@@ -18,13 +18,16 @@ Route::get('/home', 'HomeController@home')->name('home');
 
 //channels
 Route::get('/channels', 'ChannelController@index')->name('channels');
-Route::get('/channels/edit', 'ChannelController@edit')->name( 'editchannel');
-Route::get('/channels/delete/{channel_id}', 'ChannelController@delete')->name( 'deletechannel')->middleware('auth');
-//Route::get( '/channels/edit/{channel}', 'ChannelController@edit')->name( 'editchannel');
-Route::get( '/channels/editmodal/{channel}', 'ModalController@editchannel')->name( 'editchannelmodal');
-Route::post('/channels/save', 'ChannelController@save')->name('savechannel');
+Route::get('/channels/edit', 'ChannelController@edit')->name( 'channel.edit');
+Route::get('/channels/delete/{channel_id}', 'ChannelController@delete')->name( 'channel.delete')->middleware('auth');
+//Route::get( '/channels/edit/{channel}', 'ChannelController@edit')->name( 'channel.edit');
+Route::get( '/channels/editmodal/{channel}', 'ModalController@editchannel')->name( 'modal.channel.edit');
+Route::post('/channels/save', 'ChannelController@save')->name('channel.save');
 
 //media
-Route::get('/media/edit', 'MediaController@edit')->name('editmedia');
+Route::get('/media', 'MediaController@index')->name('media');
+Route::get('/media/add', 'MediaController@add')->name('media.add');
+Route::get('/media/edit', 'MediaController@edit')->name('media.edit');
+Route::post('/media/save', 'MediaController@save')->name('media.save');
 
 Route::get('logout', 'Auth\LoginController@logout');

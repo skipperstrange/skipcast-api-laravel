@@ -24,13 +24,14 @@ class ModalController extends Controller
         //$this->middleware('auth:web')->except('index');
     }
 
-    public function editchannel(int $channel_id){
-        if($channel_id){
+    public function editchannel(int $channel_id)
+    {
+        if ($channel_id) {
             $channel = Channel::find($channel_id);
-        }else{
+        } else {
             $channel = new Channel;
         }
 
-        return view('modals/edit-channel', ['channel'=>$channel]);
+        return view('modals/edit-channel', ['channel' => $channel]);
     }
 }

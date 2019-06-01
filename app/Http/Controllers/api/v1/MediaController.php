@@ -1,9 +1,10 @@
 <?php
 
-namespace SkipCast\Http\Controllers;
+namespace SkipCast\Http\Controllers\api\v1;
 
 use SkipCast\Model\Media;
 use Illuminate\Http\Request;
+use SkipCast\Http\Controllers\Controller;
 
 class MediaController extends Controller
 {

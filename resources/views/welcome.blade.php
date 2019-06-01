@@ -35,10 +35,10 @@
                             <div class="bottom padder m-b-sm">
 
                             @if (Auth::user() == $channel->user)
-                            <a href="{{route('editchannelmodal',['channel_id'=>$channel->id])}}" data-toggle="ajaxModal">
+                            <a href="{{route('modal.channel.edit',['channel_id'=>$channel->id])}}" data-toggle="ajaxModal">
                           <i class="icon icon-pencil i-2x"></i>
                       </a>
-                            <a href="{{route('deletechannel',['channel_id'=>$channel->id])}}" class="pull-right">
+                            <a href="{{route('channel.delete',['channel_id'=>$channel->id])}}" class="pull-right">
                             <i class="fa fa-trash-o i-2x"></i>
                             </a>
                             @endif

@@ -10,7 +10,7 @@
     </div>
     <div class="modal-footer">
       <a href="#" id="modalCancel" class="btn btn-default" data-dismiss="modal">Close</a>
-      <a href="@yield('modalAction')" id="modalAction" ty class="btn btn-primary">Save</a>
+      <a href="@yield('modalAction')" id="modalAction" class="btn btn-primary">Save</a>
     </div>
   </div><!-- /.modal-content -->
 </div><!-- /.modal-dialog -->

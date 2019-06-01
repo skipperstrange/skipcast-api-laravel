@@ -12,7 +12,7 @@
                   <section class="panel panel-default">
                     <header class="panel-heading font-bold">Basic info</header>
                     <div class="panel-body">
-                      <form role="form" action="{{route('savechannel')}}" method="post">
+                      <form role="form" action="{{route('channel.save')}}" method="post">
                         @csrf
                             @include('includes/msgs')
                             @include('includes/channel-form')
