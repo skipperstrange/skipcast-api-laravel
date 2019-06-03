@@ -12,12 +12,20 @@ class Media extends Model
 {
     protected $media_info = array();
     public $getID3;
-    protected $art_extensions = ['image/jpeg'=>'jpg'];
+    protected $art_extensions = ['image/jpeg'=>'jpg', 'image/jpeg'=>'jpg', 'image/png' => 'png'];
+    protected $media_store_path;
+    protected $media_art_path;
+    protected $media_store_url;
+    protected $media_art_url;
 
 
     function __construct()
     {
         $this->getID3 = new \getID3;
+        $this->media_store_path = Storage::disk('local')->path('') . 'public/media/';
+        $this->media_art_path = Storage::disk('local')->path('') . 'public/art/';
+        $this->media_store_url = Storage::disk('local')->url('') . 'public/media/';
+        $this->media_art_url = Storage::disk('local')->url('') . 'public/art/';
     }
 
 
@@ -55,20 +63,19 @@ class Media extends Model
         $this->media_info['comment'] = @$media_info['tags']['id3v1']['comment'][0];
         $this->media_info['year'] = @$media_info['tags']['id3v1']['year'];
         $this->media_info['playtime_seconds'] = @$media_info['playtime_seconds'];
-        //$this->media_info['media_art'] = @$media_info['comments']['picture'][0]['data'];
-        $this->media_info['media_art'] = $this->_album_art($media);
         $this->media_info['media_art_mime'] = @$media_info['comments']['picture'][0]['image_mime'];
+        //$this->media_info['media_art'] = @$media_info['comments']['picture'][0]['data'];
+        $this->media_info['media_art'] = 'data:' . $this->media_info['media_art_mime'] . ';base64,' . $this->_album_art($media);
+        $this->media_info['media_art_raw'] = $this->_album_art($media);
         return $this->media_info;
     }
 
     protected function _album_art($media)
     {
         $m = $this->getID3->analyze($media);
-
         if(isset( $m['comments']['picture'][0]['data'])){
-            $mimetype = @$m['comments']['picture'][0]['image_mime'];
             $data = @$m['comments']['picture'][0]['data'];
-            return 'data:' . $mimetype . ';base64,' . base64_encode($data);
+            return base64_encode($data);
         }
         return asset( 'images/defaults/music_2.jpg');
     }
@@ -82,13 +89,14 @@ class Media extends Model
         return Storage::disk('media')->put($filename, $source);
     }
 
-    protected function _store_media_art()
+    protected function _store_media_art($filename, $source)
     {
-        return Storage::disk('art')->put($filename, $source);
+        return file_put_contents($this->media_art_path. $filename, file_get_contents($source));
     }
 
-    protected function _get_art_extension($mime_type){
-       return  str_replace(array('image/', 'x-', 'jpeg'), array('', '', 'jpg'), $mime_type);
+    protected function _art_extension($mime_type){
+      //  return  str_replace(array('image/', 'x-', 'jpeg'), array('', '', 'jpg'), $mime_type);
+       return  $this->art_extensions[$mime_type];
     }
 
 }

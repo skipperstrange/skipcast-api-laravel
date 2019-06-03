@@ -60,7 +60,7 @@ class MediaController extends Controller
                $filename =  Media::_filename($media->id, $m->getClientOriginalExtension());
                 $media->name = $media->title;
                 Media::_store_media($filename, File::get($m));
-                $cover_art = Media::_filename($media->id, Media::_extension($media_info['media_art_mime']));
+                $cover_art = Media::_filename($media->id, Media::_art_extension($media_info['media_art_mime']));
                 //Storage::disk('art')->put( $img, $media_info['media_art']);
                 Media::_store_media_art($cover_art, $media_info['media_art']);
                 $media->thumbnailUrl = $media_info['media_art'];
